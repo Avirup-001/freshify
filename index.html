@@ -1,0 +1,847 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Freshify Smoothie Bowls</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="bg-a"></div>
+  <div id="bg-b"></div>
+
+  <nav class="site-nav" aria-label="Primary">
+    <a class="brand" href="#home">Freshify</a>
+    <div class="nav-pill" aria-label="Page sections">
+      <a class="active" href="#home" data-section="home">Home</a>
+      <a href="#about" data-section="about">About</a>
+      <a href="#shop" data-section="shop">Shop</a>
+      <a href="#contact" data-section="contact">Contact</a>
+    </div>
+    <button id="cart-btn" class="user-button" onclick="openCart()" aria-label="Open cart">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <circle cx="9" cy="21" r="1"></circle>
+        <circle cx="20" cy="21" r="1"></circle>
+        <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+      </svg>
+      <span id="cart-count" class="cart-badge">0</span>
+    </button>
+  </nav>
+
+  <section class="hero" id="home" aria-label="Freshify flavours">
+    <div class="slider">
+      <article class="slide active" aria-label="Blueberry smoothie bowl">
+        <div class="slide-title"><div class="anim title-anim">BLUEBERRY</div></div>
+        <div class="bowl-wrap"><div class="anim bowl-anim"><img class="bowl" src="Images/Blueberry-bowl.png" alt="Blueberry smoothie bowl"></div></div>
+        <img class="ingredient anim ing-1" src="Images/Blueberry-1.png" alt="">
+        <img class="ingredient anim ing-2" src="Images/Blueberry-2.png" alt="">
+        <img class="ingredient anim ing-3" src="Images/Blueberry-3.png" alt="">
+        <div class="slide-copy anim content-anim">
+          <h1>Berry Pure</h1>
+          <p>Fresh blueberries blended with almond milk, topped with chia seeds and toasted coconut flakes.</p>
+        </div>
+      </article>
+
+      <article class="slide enter-right" aria-label="Strawberry smoothie bowl">
+        <div class="slide-title"><div class="anim title-anim">STRAWBY</div></div>
+        <div class="bowl-wrap"><div class="anim bowl-anim"><img class="bowl" src="Images/Strawberry-bowl.png" alt="Strawberry smoothie bowl"></div></div>
+        <img class="ingredient anim ing-1" src="Images/Strawberry-1.png" alt="">
+        <img class="ingredient anim ing-2" src="Images/Strawberry-2.png" alt="">
+        <img class="ingredient anim ing-3" src="Images/Strawberry-3.png" alt="">
+        <div class="slide-copy anim content-anim">
+          <h1>Pink Bliss</h1>
+          <p>Sun-ripened strawberries with banana, shredded coconut and a drizzle of raw honey.</p>
+        </div>
+      </article>
+
+      <article class="slide enter-right" aria-label="Chocolate smoothie bowl">
+        <div class="slide-title"><div class="anim title-anim">CHOCOLATE</div></div>
+        <div class="bowl-wrap"><div class="anim bowl-anim"><img class="bowl" src="Images/Chocolate-bowl.png" alt="Chocolate smoothie bowl"></div></div>
+        <img class="ingredient anim ing-1" src="Images/Chocolate-1.png" alt="">
+        <img class="ingredient anim ing-2" src="Images/Chocolate-2.png" alt="">
+        <img class="ingredient anim ing-3" src="Images/Chocolate-3.png" alt="">
+        <div class="slide-copy anim content-anim">
+          <h1>Cocoa Crush</h1>
+          <p>Rich cacao smoothie base topped with sliced banana, roasted almonds and coconut flakes.</p>
+        </div>
+      </article>
+
+      <article class="slide enter-right" aria-label="Blackberry smoothie bowl">
+        <div class="slide-title"><div class="anim title-anim">BLACKBY</div></div>
+        <div class="bowl-wrap"><div class="anim bowl-anim"><img class="bowl" src="Images/Blackberry-bowl.png" alt="Blackberry smoothie bowl"></div></div>
+        <img class="ingredient anim ing-1" src="Images/Blackberry-1.png" alt="">
+        <img class="ingredient anim ing-2" src="Images/Blackberry-2.png" alt="">
+        <img class="ingredient anim ing-3" src="Images/Blackberry-3.png" alt="">
+        <div class="slide-copy anim content-anim">
+          <h1>Dark Berry</h1>
+          <p>Wild blackberries with coconut cream, pine nuts, chia seeds and toasted almond slivers.</p>
+        </div>
+      </article>
+    </div>
+
+    <div class="slide-nav" aria-label="Slide controls">
+      <div class="counter" aria-live="polite">01 / 04</div>
+      <div class="arrow-group">
+        <button class="arrow-btn" type="button" data-prev aria-label="Previous flavour">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><path d="m15 5-7 7 7 7"/></svg>
+        </button>
+        <button class="arrow-btn" type="button" data-next aria-label="Next flavour">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><path d="m9 5 7 7-7 7"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <a class="scroll-hint" href="#about">
+      <span>Discover</span>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+    </a>
+  </section>
+
+  <section class="about" id="about">
+    <div class="care-pill reveal">CRAFTED WITH CARE</div>
+    <h2 class="reveal reveal-d1">REAL FRUIT.<br>REAL FLAVOUR.</h2>
+    <p class="about-copy reveal reveal-d2">Every bowl is built from scratch with premium whole ingredients. No fillers, no shortcuts &mdash; just pure smoothie goodness in every spoonful.</p>
+    <div class="stats reveal reveal-d3">
+      <div class="stat">
+        <strong>100%</strong>
+        <span>NATURAL</span>
+      </div>
+      <div class="stat">
+        <strong>4</strong>
+        <span>FLAVOURS</span>
+      </div>
+      <div class="stat">
+        <strong>0</strong>
+        <span>FILLERS</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="menu" id="shop">
+    <div class="menu-inner">
+      <div class="menu-header">
+        <h2 class="reveal">THE<br>BOWLS</h2>
+        <p class="menu-intro reveal reveal-d1">Pick your flavour. Every bowl is handcrafted fresh to order.</p>
+      </div>
+
+      <div class="card-grid">
+        <article class="bowl-card card-blueberry reveal">
+          <p class="card-label">SMOOTHIE BOWL</p>
+          <h3>Berry Pure</h3>
+          <span class="card-flavour">BLUEBERRY</span>
+          <img class="card-image" src="Images/Blueberry-bowl.png" alt="Berry Pure blueberry bowl">
+          <div class="card-bottom">
+            <strong class="price">$14</strong>
+            <a class="order-btn" href="#" onclick="openModal('Berry Pure','Images/Blueberry-bowl.png','$14');return false;">Order<br>Now</a>
+          </div>
+        </article>
+
+        <article class="bowl-card card-strawberry reveal reveal-d1">
+          <p class="card-label">SMOOTHIE BOWL</p>
+          <h3>Pink Bliss</h3>
+          <span class="card-flavour">STRAWBERRY</span>
+          <img class="card-image" src="Images/Strawberry-bowl.png" alt="Pink Bliss strawberry bowl">
+          <div class="card-bottom">
+            <strong class="price">$15</strong>
+            <a class="order-btn" href="#" onclick="openModal('Pink Bliss','Images/Strawberry-bowl.png','$15');return false;">Order<br>Now</a>
+          </div>
+        </article>
+
+        <article class="bowl-card card-chocolate reveal reveal-d2">
+          <p class="card-label">SMOOTHIE BOWL</p>
+          <h3>Cocoa Crush</h3>
+          <span class="card-flavour">CHOCOLATE</span>
+          <img class="card-image" src="Images/Chocolate-bowl.png" alt="Cocoa Crush chocolate bowl">
+          <div class="card-bottom">
+            <strong class="price">$13</strong>
+            <a class="order-btn" href="#" onclick="openModal('Cocoa Crush','Images/Chocolate-bowl.png','$13');return false;">Order<br>Now</a>
+          </div>
+        </article>
+
+        <article class="bowl-card card-blackberry reveal reveal-d3">
+          <p class="card-label">SMOOTHIE BOWL</p>
+          <h3>Dark Berry</h3>
+          <span class="card-flavour">BLACKBERRY</span>
+          <img class="card-image" src="Images/Blackberry-bowl.png" alt="Dark Berry blackberry bowl">
+          <div class="card-bottom">
+            <strong class="price">$16</strong>
+            <a class="order-btn" href="#" onclick="openModal('Dark Berry','Images/Blackberry-bowl.png','$16');return false;">Order<br>Now</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="faq" id="faq">
+    <h2 class="reveal">FREQUENTLY ASKED</h2>
+    <div class="faq-list">
+      <details class="faq-item reveal reveal-d1">
+        <summary>Are your bowls vegan and gluten-free?</summary>
+        <div class="faq-content">Yes! All of our bases are 100% vegan, made with almond or coconut milk. Most of our toppings are gluten-free, but please let us know about any severe allergies.</div>
+      </details>
+      <details class="faq-item reveal reveal-d2">
+        <summary>Do you use added sugars?</summary>
+        <div class="faq-content">Never. The sweetness in our bowls comes entirely from real, organic fruits and a touch of raw honey or agave if requested.</div>
+      </details>
+      <details class="faq-item reveal reveal-d3">
+        <summary>Can I customize my bowl?</summary>
+        <div class="faq-content">Absolutely! You can mix and match bases, remove ingredients, or load up on extra superfood toppings.</div>
+      </details>
+      <details class="faq-item reveal reveal-d4">
+        <summary>Do you deliver?</summary>
+        <div class="faq-content">Yes, we deliver within a 5-mile radius through our delivery partners.</div>
+      </details>
+    </div>
+  </section>
+
+  <section class="testimonials" id="reviews">
+    <h2 class="reveal">WHAT THEY SAY</h2>
+    <div class="testimonial-grid">
+      <article class="testimonial-card reveal reveal-d1">
+        <p>"The best smoothie bowls in town! The ingredients are so fresh and the flavors are perfectly balanced. My absolute favorite is the Cocoa Crush."</p>
+        <div class="author">
+          <div class="avatar">S</div>
+          <strong>Sarah Jenkins</strong>
+        </div>
+      </article>
+      <article class="testimonial-card reveal reveal-d2">
+        <p>"I come here every morning after my workout. The Berry Pure bowl gives me all the energy I need. 10/10 would recommend!"</p>
+        <div class="author">
+          <div class="avatar">M</div>
+          <strong>Michael Chen</strong>
+        </div>
+      </article>
+      <article class="testimonial-card reveal reveal-d3">
+        <p>"Obsessed with the aesthetics and the taste. The Pink Bliss bowl is almost too pretty to eat... almost. Love this place!"</p>
+        <div class="author">
+          <div class="avatar">E</div>
+          <strong>Emily Rodriguez</strong>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="info-section">
+    <div class="info-inner">
+      <div class="location-hours reveal">
+        <h2>VISIT US</h2>
+        <div class="info-block">
+          <h3>LOCATION</h3>
+          <p>123 Berry Street<br>Freshville, CA 90210</p>
+        </div>
+        <div class="info-block">
+          <h3>HOURS</h3>
+          <p>Mon - Fri: 7:00 AM - 6:00 PM<br>Sat - Sun: 8:00 AM - 4:00 PM</p>
+        </div>
+      </div>
+      
+      <div class="contact-banner reveal reveal-d1" id="contact">
+        <h2>GET IN TOUCH</h2>
+        <p>Have a question or want to order ahead? Send us a message.</p>
+        <form class="contact-form" onsubmit="event.preventDefault(); alert('Message sent successfully!'); this.reset();">
+          <div class="input-group">
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+          </div>
+          <textarea placeholder="Your Message" rows="3" required></textarea>
+          <button type="submit" class="submit-btn">SEND MESSAGE</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <section class="social-grid" aria-label="Social media">
+    <a href="https://instagram.com/freshify" target="_blank" rel="noopener noreferrer" class="social-item ig reveal" aria-label="Follow Freshify on Instagram">
+      <span class="social-icon">
+        <img src="logos/insta.png" alt="Instagram">
+      </span>
+    </a>
+    <a href="https://facebook.com/freshify" target="_blank" rel="noopener noreferrer" class="social-item fb reveal reveal-d1" aria-label="Follow Freshify on Facebook">
+      <span class="social-icon">
+        <img src="logos/fb.png" alt="Facebook">
+      </span>
+    </a>
+    <a href="https://x.com/freshify" target="_blank" rel="noopener noreferrer" class="social-item x reveal reveal-d2" aria-label="Follow Freshify on X">
+      <span class="social-icon">
+        <img src="logos/x.png" alt="X">
+      </span>
+    </a>
+    <a href="https://youtube.com/@freshify" target="_blank" rel="noopener noreferrer" class="social-item yt reveal reveal-d3" aria-label="Follow Freshify on YouTube">
+      <span class="social-icon">
+        <img src="logos/yt.png" alt="YouTube">
+      </span>
+    </a>
+    <a href="https://wa.me/15551234567?text=Hi%20Freshify!" target="_blank" rel="noopener noreferrer" class="social-item wp reveal reveal-d4" aria-label="Message Freshify on WhatsApp">
+      <span class="social-icon">
+        <img src="logos/wp.png" alt="WhatsApp">
+      </span>
+    </a>
+  </section>
+
+  <footer>
+    <div class="footer-row">
+      <div class="footer-brand">
+        <strong>FRESHIFY</strong>
+        <span>Made with love and real blueberries.</span>
+      </div>
+      <div class="footer-links" aria-label="Footer links">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#shop">Shop</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <p class="copyright">&copy; 2026 Freshify. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <div class="modal-overlay" id="order-modal">
+    <div class="modal-content">
+      <button class="modal-close" onclick="closeModal()">×</button>
+      <div class="modal-split">
+        <div class="modal-image-wrap">
+          <img id="modal-image" src="" alt="Bowl">
+        </div>
+        <div class="modal-info">
+          <p class="card-label">CUSTOMIZE YOUR BOWL</p>
+          <h2 id="modal-title">Bowl Name</h2>
+          <form id="order-form" onsubmit="submitOrder(event)">
+            <div class="form-row">
+              <label>Size</label>
+              <select><option>Regular</option><option>Large (+$4)</option></select>
+            </div>
+            <div class="form-row">
+              <label>Extra Toppings (+$1)</label>
+              <label class="check-label"><input type="checkbox"> Chia Seeds</label>
+              <label class="check-label"><input type="checkbox"> Almond Butter</label>
+              <label class="check-label"><input type="checkbox"> Coconut Flakes</label>
+            </div>
+            <button type="submit" class="submit-btn" id="add-to-cart-btn">ADD TO CART - <span id="modal-price">$14</span></button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Cart Drawer -->
+  <div id="cart-drawer" class="cart-drawer">
+    <div class="cart-header">
+      <h3>Your Cart</h3>
+      <button onclick="closeCart()" class="cart-close">×</button>
+    </div>
+    <div id="cart-items" class="cart-items">
+      <!-- Populated by JS -->
+    </div>
+    <div class="cart-footer">
+      <div class="cart-total">
+        <span>Subtotal</span>
+        <strong id="cart-subtotal">$0</strong>
+      </div>
+      <button class="checkout-btn" onclick="openCheckout()">Checkout via WhatsApp</button>
+      <p class="cart-note">We'll send your order details on WhatsApp. No account needed.</p>
+    </div>
+  </div>
+
+  <!-- Checkout Form Modal -->
+  <div id="checkout-modal" class="modal-overlay">
+    <div class="modal-content checkout-content">
+
+      <div class="checkout-header">
+        <h2>Confirm Your Order</h2>
+        <button type="button" class="back-link" onclick="goBackToCart()">← Edit Cart</button>
+      </div>
+
+      <!-- Order Summary -->
+      <div class="checkout-order-summary">
+        <div class="summary-title">Your Items</div>
+        <div id="checkout-items-list" class="checkout-items-list">
+          <!-- Populated dynamically by JS -->
+        </div>
+        <div class="summary-total-row">
+          <span>Total</span>
+          <strong id="checkout-total">$0</strong>
+        </div>
+      </div>
+
+      <form id="checkout-form" onsubmit="sendWhatsAppOrder(event)">
+        <div class="checkout-section">
+          <div class="section-label">Contact &amp; Delivery</div>
+
+          <div class="form-row">
+            <label>Full Name <span class="req">*</span></label>
+            <input type="text" id="cust-name" required placeholder="Jane Appleseed">
+          </div>
+
+          <div class="form-row">
+            <label>Delivery Address <span class="req">*</span></label>
+            <textarea id="cust-address" required rows="2" placeholder="123 Berry Lane, Freshville, CA 90210"></textarea>
+          </div>
+
+          <div class="form-row two-col">
+            <div>
+              <label>Phone <span class="optional">(optional)</span></label>
+              <input type="tel" id="cust-phone" placeholder="(555) 123-4567">
+            </div>
+            <div>
+              <label>When</label>
+              <select id="cust-time">
+                <option>ASAP</option>
+                <option>Next 30 mins</option>
+                <option>Within 1 hour</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div class="checkout-section">
+          <div class="section-label">Notes for the team <span class="optional">(optional)</span></div>
+          <div class="form-row" style="margin-bottom:0;">
+            <textarea id="cust-notes" rows="2" placeholder="Ring the doorbell, extra spoons, allergies, etc."></textarea>
+          </div>
+        </div>
+
+        <div class="checkout-trust">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          <span>This will open WhatsApp with your full order pre-filled. Review before sending.</span>
+        </div>
+
+        <button type="submit" class="submit-btn whatsapp-btn">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="margin-right:8px;"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.198-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.372-.025-.521-.075-.149-.67-1.611-.92-2.206-.247-.595-.5-.52-.67-.53l-.57-.01c-.198 0-.52.074-.793.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.263.489 1.694.625.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/></svg>
+          Send Order on WhatsApp
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    const slides = Array.from(document.querySelectorAll('.slide'));
+    const counter = document.querySelector('.counter');
+    const bgA = document.getElementById('bg-a');
+    const bgB = document.getElementById('bg-b');
+    const navLinks = Array.from(document.querySelectorAll('.nav-pill a'));
+    const sections = [
+      { id: 'home', el: document.getElementById('home') },
+      { id: 'about', el: document.getElementById('about') },
+      { id: 'shop', el: document.getElementById('shop') },
+      { id: 'contact', el: document.getElementById('contact') }
+    ];
+
+    const backgrounds = [
+      'radial-gradient(ellipse at 50% 50%, #7078A6 0%, #2E2951 100%)',
+      'radial-gradient(ellipse at 50% 50%, #C94040 0%, #6B1515 100%)',
+      'radial-gradient(ellipse at 50% 50%, #B07C40 0%, #4A2A10 100%)',
+      'radial-gradient(ellipse at 50% 50%, #8A3878 0%, #3A0F50 100%)'
+    ];
+
+    let current = 0;
+    let animating = false;
+    let activeBg = 'a';
+    let autoSlideTimer;
+
+    function startAutoSlide() {
+      autoSlideTimer = setInterval(nextSlide, 3000);
+    }
+
+    function resetAutoSlide() {
+      clearInterval(autoSlideTimer);
+      startAutoSlide();
+    }
+
+    function updateCounter(index) {
+      counter.textContent = `${String(index + 1).padStart(2, '0')} / ${String(slides.length).padStart(2, '0')}`;
+    }
+
+    function setBackground(index) {
+      const grad = backgrounds[index];
+      if (activeBg === 'a') {
+        bgB.style.background = grad;
+        bgB.style.opacity = '1';
+        bgA.style.opacity = '0';
+        activeBg = 'b';
+      } else {
+        bgA.style.background = grad;
+        bgA.style.opacity = '1';
+        bgB.style.opacity = '0';
+        activeBg = 'a';
+      }
+    }
+
+    function goTo(next, direction) {
+      if (animating || next === current) return;
+      animating = true;
+      resetAutoSlide();
+
+      const currSlide = slides[current];
+      const nextSlide = slides[next];
+      const enterClass = direction === 'next' ? 'enter-right' : 'enter-left';
+      const exitClass = direction === 'next' ? 'exit-left' : 'exit-right';
+
+      const anims = nextSlide.querySelectorAll('.anim');
+      anims.forEach(el => el.style.transition = 'none');
+      nextSlide.classList.remove('active', 'exit-left', 'exit-right', 'enter-left', 'enter-right');
+      nextSlide.classList.add(enterClass);
+
+      void nextSlide.offsetHeight;
+
+      requestAnimationFrame(() => {
+        anims.forEach(el => el.style.transition = '');
+        currSlide.classList.remove('active');
+        currSlide.classList.add(exitClass);
+        nextSlide.classList.remove(enterClass);
+        nextSlide.classList.add('active');
+        setBackground(next);
+        updateCounter(next);
+        current = next;
+        setTimeout(() => {
+          currSlide.classList.remove(exitClass);
+          currSlide.classList.add(direction === 'next' ? 'enter-left' : 'enter-right');
+          animating = false;
+        }, 850);
+      });
+    }
+
+    function nextSlide() {
+      goTo((current + 1) % slides.length, 'next');
+    }
+
+    function prevSlide() {
+      goTo((current - 1 + slides.length) % slides.length, 'prev');
+    }
+
+    document.querySelector('[data-next]').addEventListener('click', nextSlide);
+    document.querySelector('[data-prev]').addEventListener('click', prevSlide);
+
+    window.addEventListener('keydown', event => {
+      if (event.key === 'ArrowRight') nextSlide();
+      if (event.key === 'ArrowLeft') prevSlide();
+    });
+
+    function updateActiveNav() {
+      const marker = window.scrollY + window.innerHeight * 0.42;
+      let activeId = 'home';
+
+      sections.forEach(section => {
+        if (marker >= section.el.offsetTop) activeId = section.id;
+      });
+
+      navLinks.forEach(link => {
+        link.classList.toggle('active', link.dataset.section === activeId);
+      });
+    }
+
+    window.addEventListener('scroll', updateActiveNav, { passive: true });
+    window.addEventListener('resize', updateActiveNav);
+    updateActiveNav();
+
+    const revealObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.18, rootMargin: '0px 0px -8% 0px' });
+
+    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+    startAutoSlide();
+
+    // ── Parallax on hero ingredients ──
+    const heroEl = document.getElementById('home');
+    window.addEventListener('scroll', () => {
+      const scrollY = window.scrollY;
+      if (scrollY > window.innerHeight) return;
+      const activeSlide = document.querySelector('.slide.active');
+      if (!activeSlide) return;
+      const ings = activeSlide.querySelectorAll('.ingredient');
+      const speeds = [0.15, 0.22, 0.1];
+      ings.forEach((ing, i) => {
+        ing.style.transform = ing.style.transform.replace(/translateY\([^)]*\)/, '') + ` translateY(${scrollY * speeds[i]}px)`;
+      });
+    }, { passive: true });
+
+    // ── Order Modal + Real Cart System ──
+    const WHATSAPP_NUMBER = "15551234567"; // Change this to your real number
+
+    let cart = [];
+
+    const modal = document.getElementById('order-modal');
+    const modalImage = document.getElementById('modal-image');
+    const modalTitle = document.getElementById('modal-title');
+    const modalPrice = document.getElementById('modal-price');
+
+    function parsePrice(str) {
+      return parseFloat(str.replace(/[^0-9.]/g, '')) || 0;
+    }
+
+    function openModal(name, imgSrc, price) {
+      modalTitle.textContent = name;
+      modalImage.src = imgSrc;
+      modalPrice.textContent = price;
+
+      // Reset form view
+      const split = modal.querySelector('.modal-split');
+      split.style.display = '';
+      const existing = modal.querySelector('.cart-success');
+      if (existing) existing.remove();
+
+      // Reset form inputs
+      const form = document.getElementById('order-form');
+      if (form) form.reset();
+
+      modal.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+      modal.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) closeModal();
+    });
+
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        const checkout = document.getElementById('checkout-modal');
+        if (checkout.classList.contains('open')) {
+          closeCheckout();
+        } else if (document.getElementById('cart-drawer').classList.contains('open')) {
+          closeCart();
+        } else {
+          closeModal();
+        }
+      }
+    });
+
+    // Add item from the order modal (with customizations)
+    function submitOrder(e) {
+      e.preventDefault();
+
+      const name = modalTitle.textContent.trim();
+      const basePrice = parsePrice(modalPrice.textContent);
+
+      const sizeSelect = modal.querySelector('select');
+      const size = sizeSelect ? sizeSelect.value : 'Regular';
+      const sizeExtra = size.includes('Large') ? 4 : 0;
+
+      // Collect checked toppings
+      const toppings = [];
+      const checks = modal.querySelectorAll('.check-label input[type="checkbox"]');
+      checks.forEach(chk => {
+        if (chk.checked) {
+          const label = chk.parentElement.textContent.trim();
+          toppings.push(label);
+        }
+      });
+      const toppingExtra = toppings.length * 1;
+
+      const finalPrice = basePrice + sizeExtra + toppingExtra;
+
+      const item = {
+        id: Date.now(),
+        name,
+        size,
+        toppings,
+        price: finalPrice,
+        basePrice
+      };
+
+      cart.push(item);
+      updateCartCount();
+
+      // Show nice success state inside modal
+      const split = modal.querySelector('.modal-split');
+      split.style.display = 'none';
+
+      const success = document.createElement('div');
+      success.className = 'cart-success';
+      success.innerHTML = `
+        <div class="checkmark">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M5 13l4 4L19 7"/>
+          </svg>
+        </div>
+        <h3>Added to Cart!</h3>
+        <p>${name} × 1</p>
+      `;
+      modal.querySelector('.modal-content').appendChild(success);
+
+      setTimeout(() => {
+        closeModal();
+        // Auto open cart so user sees what they added (optional but nice)
+        // openCart();
+      }, 1600);
+    }
+
+    // Cart functions
+    function updateCartCount() {
+      const badge = document.getElementById('cart-count');
+      badge.textContent = cart.length;
+      badge.style.display = cart.length > 0 ? 'flex' : 'none';
+    }
+
+    function renderCart() {
+      const container = document.getElementById('cart-items');
+      const subtotalEl = document.getElementById('cart-subtotal');
+
+      container.innerHTML = '';
+
+      if (cart.length === 0) {
+        container.innerHTML = `<div style="padding:40px 24px;text-align:center;color:rgba(255,255,255,0.5);">Your cart is empty.</div>`;
+        subtotalEl.textContent = '$0';
+        return;
+      }
+
+      let subtotal = 0;
+
+      cart.forEach((item, index) => {
+        subtotal += item.price;
+
+        const toppingsText = item.toppings.length ? item.toppings.join(', ') : 'No extras';
+
+        const el = document.createElement('div');
+        el.className = 'cart-item';
+        el.innerHTML = `
+          <div class="cart-item-info">
+            <strong>${item.name}</strong>
+            <div class="meta">${item.size} • ${toppingsText}</div>
+          </div>
+          <div class="cart-item-price">$${item.price}</div>
+          <button class="cart-item-remove" onclick="removeFromCart(${index})" aria-label="Remove">×</button>
+        `;
+        container.appendChild(el);
+      });
+
+      subtotalEl.textContent = `$${subtotal}`;
+    }
+
+    function removeFromCart(index) {
+      cart.splice(index, 1);
+      updateCartCount();
+      renderCart();
+    }
+
+    function openCart() {
+      const drawer = document.getElementById('cart-drawer');
+      drawer.classList.add('open');
+      document.body.style.overflow = 'hidden';
+      renderCart();
+    }
+
+    function closeCart() {
+      const drawer = document.getElementById('cart-drawer');
+      drawer.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    // Checkout flow
+    let currentCheckoutTotal = 0;
+
+    function openCheckout() {
+      closeCart();
+
+      if (cart.length === 0) return;
+
+      const checkoutModal = document.getElementById('checkout-modal');
+      const totalEl = document.getElementById('checkout-total');
+      const itemsList = document.getElementById('checkout-items-list');
+
+      let total = 0;
+      itemsList.innerHTML = '';
+
+      cart.forEach(item => {
+        total += item.price;
+
+        const toppings = item.toppings.length ? item.toppings.join(', ') : null;
+
+        const row = document.createElement('div');
+        row.className = 'checkout-item-row';
+        row.innerHTML = `
+          <div>
+            <div>${item.name}</div>
+            ${toppings ? `<div class="item-detail">${item.size} + ${toppings}</div>` : `<div class="item-detail">${item.size}</div>`}
+          </div>
+          <div>$${item.price}</div>
+        `;
+        itemsList.appendChild(row);
+      });
+
+      currentCheckoutTotal = total;
+      totalEl.textContent = `$${total}`;
+
+      // Focus name field for better UX
+      setTimeout(() => {
+        const nameField = document.getElementById('cust-name');
+        if (nameField) nameField.focus();
+      }, 350);
+
+      checkoutModal.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function goBackToCart() {
+      closeCheckout();
+      // Small delay so the modal close animation feels natural
+      setTimeout(() => {
+        openCart();
+      }, 180);
+    }
+
+    function closeCheckout() {
+      const checkoutModal = document.getElementById('checkout-modal');
+      checkoutModal.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    function sendWhatsAppOrder(e) {
+      e.preventDefault();
+
+      const name = document.getElementById('cust-name').value.trim();
+      const address = document.getElementById('cust-address').value.trim();
+      const phone = document.getElementById('cust-phone').value.trim();
+      const time = document.getElementById('cust-time').value;
+      const notes = document.getElementById('cust-notes').value.trim();
+
+      let msg = `*New Freshify Order*\n\n`;
+      msg += `*Customer:* ${name}\n`;
+      msg += `*Address:* ${address}\n`;
+      if (phone) msg += `*Phone:* ${phone}\n`;
+      msg += `*When:* ${time}\n\n`;
+
+      msg += `*Items:*\n`;
+      cart.forEach((item, i) => {
+        const t = item.toppings.length ? ` + ${item.toppings.join(', ')}` : '';
+        msg += `• ${item.name} (${item.size})${t} — $${item.price}\n`;
+      });
+
+      msg += `\n*Total: $${currentCheckoutTotal}*\n`;
+
+      if (notes) {
+        msg += `\n_Notes: ${notes}_`;
+      }
+
+      msg += `\n\nThank you!`;
+
+      const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`;
+      window.open(url, '_blank');
+
+      // Clear everything after sending
+      cart = [];
+      updateCartCount();
+      closeCheckout();
+      // Optional: show a small thank you
+      setTimeout(() => {
+        alert("Order details sent via WhatsApp. We'll confirm shortly!");
+      }, 600);
+    }
+
+    // Initialize cart count on load
+    updateCartCount();
+
+  </script>
+</body>
+</html>

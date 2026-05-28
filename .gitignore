@@ -1,0 +1,10 @@
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Design assets (not needed for the website)
+elements/
+freshify-preview-*.png
+
+# Logs
+*.log
