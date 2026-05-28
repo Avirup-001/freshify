@@ -3,5 +3,5 @@
   "assets": {
     "directory": ".",
     "html_handling": "auto-trailing-slash"
-  }
+  },"name": "freshify"
 }
