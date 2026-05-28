@@ -1804,3 +1804,94 @@ footer {
     text-align: left;
   }
 }
+/* === Beta Feature: Order Confirmation Modal === */
+.confirmation-content {
+  max-width: 480px;
+  text-align: center;
+  padding: 32px 28px 28px;
+}
+
+.confirmation-header {
+  margin-bottom: 24px;
+}
+
+.success-icon {
+  margin-bottom: 12px;
+}
+
+.confirmation-header h2 {
+  margin: 0 0 6px;
+  font-size: 24px;
+}
+
+.order-id {
+  font-size: 14px;
+  color: rgba(255,255,255,0.6);
+  margin: 0;
+  font-family: monospace;
+}
+
+.confirmation-body {
+  background: rgba(255,255,255,0.03);
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 24px;
+  text-align: left;
+}
+
+.confirmation-summary .summary-title {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: rgba(255,255,255,0.4);
+  margin-bottom: 12px;
+}
+
+#confirmation-items {
+  font-size: 14px;
+  color: rgba(255,255,255,0.85);
+  margin-bottom: 12px;
+}
+
+.confirmation-total {
+  display: flex;
+  justify-content: space-between;
+  font-size: 15px;
+  padding-top: 12px;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  font-weight: 600;
+}
+
+.confirmation-details p {
+  font-size: 14px;
+  color: rgba(255,255,255,0.65);
+  line-height: 1.5;
+  margin: 0;
+}
+
+.confirmation-actions {
+  display: flex;
+  gap: 12px;
+}
+
+.confirmation-actions .submit-btn {
+  flex: 1;
+}
+
+.secondary-btn {
+  flex: 1;
+  padding: 14px;
+  background: rgba(255,255,255,0.08);
+  color: white;
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.beta-note {
+  font-size: 11px;
+  color: rgba(255,255,255,0.35);
+  margin-top: 16px;
+}
