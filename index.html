@@ -415,6 +415,44 @@
     </div>
   </div>
 
+  <!-- Order Confirmation Modal (Beta Feature) -->
+  <div id="confirmation-modal" class="modal-overlay">
+    <div class="modal-content confirmation-content">
+      <div class="confirmation-header">
+        <div class="success-icon">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#25D366" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+            <polyline points="22 4 12 14.01 9 11.01"></polyline>
+          </svg>
+        </div>
+        <h2>Order Received!</h2>
+        <p class="order-id">Order #<span id="order-id"></span></p>
+      </div>
+
+      <div class="confirmation-body">
+        <div class="confirmation-summary">
+          <div class="summary-title">Order Summary</div>
+          <div id="confirmation-items"></div>
+          <div class="confirmation-total">
+            <span>Total Paid</span>
+            <strong id="confirmation-total">$0</strong>
+          </div>
+        </div>
+
+        <div class="confirmation-details">
+          <p>We've received your order details via WhatsApp. Our team will contact you shortly to confirm delivery time.</p>
+        </div>
+      </div>
+
+      <div class="confirmation-actions">
+        <button class="submit-btn" onclick="closeConfirmation()">Back to Home</button>
+        <button class="secondary-btn" onclick="viewOrderHistory()">View Order History (Demo)</button>
+      </div>
+
+      <p class="beta-note">This is a demo feature on the Beta branch.</p>
+    </div>
+  </div>
+
   <script>
     const slides = Array.from(document.querySelectorAll('.slide'));
     const counter = document.querySelector('.counter');
@@ -607,8 +645,11 @@
     window.addEventListener('keydown', (e) => {
       if (e.key === 'Escape') {
         const checkout = document.getElementById('checkout-modal');
+        const confirmation = document.getElementById('confirmation-modal');
         if (checkout.classList.contains('open')) {
           closeCheckout();
+        } else if (confirmation.classList.contains('open')) {
+          closeConfirmation();
         } else if (document.getElementById('cart-drawer').classList.contains('open')) {
           closeCart();
         } else {
@@ -829,14 +870,52 @@
       const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`;
       window.open(url, '_blank');
 
-      // Clear everything after sending
+      // Generate fake order ID
+      const orderId = 'FB' + Date.now().toString().slice(-8);
+
+      // Clear cart and checkout
+      const savedItems = [...cart];
+      const savedTotal = currentCheckoutTotal;
       cart = [];
       updateCartCount();
       closeCheckout();
-      // Optional: show a small thank you
-      setTimeout(() => {
-        alert("Order details sent via WhatsApp. We'll confirm shortly!");
-      }, 600);
+
+      // Show nice confirmation modal (Beta feature)
+      showOrderConfirmation(orderId, savedItems, savedTotal);
+    }
+
+    function showOrderConfirmation(orderId, items, total) {
+      const modal = document.getElementById('confirmation-modal');
+      const orderIdEl = document.getElementById('order-id');
+      const itemsContainer = document.getElementById('confirmation-items');
+      const totalEl = document.getElementById('confirmation-total');
+
+      orderIdEl.textContent = orderId;
+      totalEl.textContent = `$${total}`;
+
+      itemsContainer.innerHTML = '';
+      items.forEach(item => {
+        const toppings = item.toppings.length ? ` + ${item.toppings.join(', ')}` : '';
+        const div = document.createElement('div');
+        div.style.marginBottom = '6px';
+        div.innerHTML = `• ${item.name} (${item.size})${toppings} — <strong>$${item.price}</strong>`;
+        itemsContainer.appendChild(div);
+      });
+
+      modal.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeConfirmation() {
+      const modal = document.getElementById('confirmation-modal');
+      modal.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    // Demo function - shows mock previous orders
+    function viewOrderHistory() {
+      alert("Order History (Demo)\n\n• #FB17234567 - 2 bowls - $29 - Delivered\n• #FB17228901 - 1 bowl - $16 - Delivered");
+      closeConfirmation();
     }
 
     // Initialize cart count on load
